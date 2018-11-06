@@ -1,27 +1,36 @@
 import WordChecker
 import Config
+import Max
 
 class ScoreCounter:
-    def __init__(self, word):
-        self._wordchecker = WordChecker.WordChecker()
-        self._word = word.upper()
 
-    def result(self):
-        if self._wordchecker.check_word(self._word):
-            sum = 0
-            for letter in range(0, len(self._word)):
-                sum += Config.LETTER_SCORES[self._word[letter]]
+    def __init__(self, words):
+        self._wordchecker = WordChecker.WordChecker()
+        self._words = words
+
+    def result(self, word):
+        sum = 0
+        word = word.upper()
+        if self._wordchecker.check_word(word):
+            for letter in range(0, len(word)):
+                sum += Config.LETTER_SCORES[word[letter]]
             return sum
 
         else:
             print("This word does not exist!")
-            pass
+            return 0
 
-    def for_all_counter(self, _words):
+    def count_for_all(self):
         words_and_scores = []
-        for i in _words:
-            words_and_scores[i] = (_words, self.result())
+        for word in self._words:
+            score = self.result(word)
+            words_and_scores.append((word, score))
         return words_and_scores
+
+    def max_from_file(self):
+        words_and_scores = self.count_for_all()
+        max_counter = Max.Max()
+        return max_counter.count_maximum(words_and_scores)
 
 
 
