@@ -16,5 +16,3 @@ class FileReader:
             for chunk in file_content:
                 self._words.append(chunk.rstrip())
         return self._words
-
-

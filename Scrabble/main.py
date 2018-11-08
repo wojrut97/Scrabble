@@ -1,17 +1,13 @@
-import CLI
-import Config
-import APILoader
-import WordChecker
+import Application
+
 
 class Main:
+
     @staticmethod
     def main():
-        print("Hello")
-
-        cli = CLI.CLI()
-        cli.parser()
+        app = Application.Aplication()
+        app.application()
 
 
-# TODO:
 if __name__ == '__main__':
     Main.main()

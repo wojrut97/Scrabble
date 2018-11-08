@@ -2,6 +2,7 @@ import WordChecker
 import Config
 import Max
 
+
 class ScoreCounter:
 
     def __init__(self, words):
@@ -31,6 +32,3 @@ class ScoreCounter:
         words_and_scores = self.count_for_all()
         max_counter = Max.Max()
         return max_counter.count_maximum(words_and_scores)
-
-
-

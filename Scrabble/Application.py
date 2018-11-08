@@ -1,4 +1,8 @@
-class Aplication:
-    def __init__(self):
+import CLI
 
-        pass
+
+class Aplication:
+
+    def application(self):
+        cli = CLI.CLI()
+        cli.parser()

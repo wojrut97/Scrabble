@@ -1,8 +1,5 @@
-import http
 import urllib.request
 from xml.dom import minidom
-import xml.etree.ElementTree as ET
-import string
 
 
 class APILoader:

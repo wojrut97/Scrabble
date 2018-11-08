@@ -1,9 +1,10 @@
 import argparse
 import FileReader
 import ScoreCounter
-import Max
+
 
 class CLI:
+
     def __init__(self):
         print("CLI initiation")
         pass
@@ -27,11 +28,10 @@ class CLI:
         if _args.count:
             value = ScoreCounter.ScoreCounter(_args.count)
             print(value.result(_args.count))
-            #TODO: counter valuer
 
         if _args.score:
-            print("costam")
-            #TODO: scores API SRAPI JAPIERDOLE
+            print("score")
+            #TODO: scores
         pass
 
 
