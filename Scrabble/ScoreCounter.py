@@ -1,4 +1,4 @@
-import WordChecker
+
 import Config
 import Max
 
@@ -6,20 +6,16 @@ import Max
 class ScoreCounter:
 
     def __init__(self, words):
-        self._wordchecker = WordChecker.WordChecker()
         self._words = words
 
-    def result(self, word):
+    @staticmethod
+    def result(word):
         sum = 0
+        word = ''.join(filter(str.isalpha, word))
         word = word.upper()
-        if self._wordchecker.check_word(word):
-            for letter in range(0, len(word)):
-                sum += Config.LETTER_SCORES[word[letter]]
-            return sum
-
-        else:
-            print("This word does not exist!")
-            return 0
+        for letter in range(0, len(word)):
+            sum += Config.LETTER_SCORES[word[letter]]
+        return sum
 
     def count_for_all(self):
         words_and_scores = []

@@ -1,13 +1,11 @@
-import Application
+import CLI
 
 
 class Main:
-
     @staticmethod
     def main():
-        app = Application.Aplication()
-        app.application()
-
+        cli = CLI.CLI()
+        cli.parser()
 
 if __name__ == '__main__':
     Main.main()

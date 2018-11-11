@@ -4,7 +4,7 @@ from typing import List, Any
 class FileReader:
     _words: List[Any]
 
-    def __init__(self, file_name="dictionary.txt"):
+    def __init__(self, file_name):
         self._filename = file_name
         self._words = []
 
